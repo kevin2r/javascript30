@@ -15,6 +15,14 @@ function setDate() {
   secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
   minHand.style.transform = `rotate(${minsDegrees}deg)`;
   hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
+
+  if (seconds === 0) {
+    document.querySelector('.second-hand').style.transition = 'initial'
+  } else {
+    document.querySelector('.second-hand').style.transition = 'all 0.05s'
+    document.querySelector('.second-hand')
+      .style['transition-timing-function'] = 'cubic-bezier(0, 3.92, 1, 0.1)'
+  }
 }
 
 window.setInterval(setDate, 1000);
