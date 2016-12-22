@@ -15,11 +15,6 @@ function setDate() {
   secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
   minHand.style.transform = `rotate(${minsDegrees}deg)`;
   hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
-
-  if (secondsDegrees === 59) {
-    secondHand.style.transition = '';
-  }
 }
-
 
 window.setInterval(setDate, 1000);
