@@ -9,6 +9,7 @@ let lastChecked;
 function handleCheck(e) {
   let inBetween = false;
 
+  //check multiple checkboxes
   if (e.shiftKey && this.checked) {
     checkboxes.forEach(checkbox => {
       if (checkbox === this || checkbox === lastChecked) {
@@ -16,6 +17,18 @@ function handleCheck(e) {
       }
       if (inBetween) {
         checkbox.checked = true;
+      }
+    });
+  };
+
+  //uncheck multiple checkboxes
+  if (e.shiftKey && !this.checked) {
+    checkboxes.forEach(checkbox => {
+      if (checkbox === this || checkbox === lastChecked) {
+        inBetween = !inBetween;
+      }
+      if (inBetween) {
+        checkbox.checked = false;
       }
     });
   };
